@@ -3,18 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Laura Katerine Molina Torres</title>
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
 <style>
-body{
+
+*{
     margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
     font-family:'Segoe UI',sans-serif;
     background:#f5f6fa;
 }
 
+/* NAVBAR SPA */
+
+nav{
+    position:sticky;
+    top:0;
+    width:100%;
+    background:white;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    padding:15px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    z-index:1000;
+}
+
+nav a{
+    text-decoration:none;
+    color:#6c63ff;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#ff4fd8;
+}
+
 /* HEADER */
+
 header{
     background: linear-gradient(135deg,hsl(289, 100%, 69%),#8e7dff);
     color:white;
@@ -41,7 +76,18 @@ h1{
     margin:15px 0 5px;
 }
 
+/* CONTENIDO SPA */
+
+.page{
+    display:none;
+}
+
+.page.active{
+    display:block;
+}
+
 /* SECCIONES */
+
 section{
     max-width:900px;
     margin:25px auto;
@@ -49,11 +95,12 @@ section{
     padding:25px;
     border-radius:15px;
     box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    animation: slideUp 1s ease;
+    animation: slideUp 0.8s ease;
 }
 
 h2{
     color:#6c63ff;
+    margin-bottom:15px;
 }
 
 ul{
@@ -61,6 +108,7 @@ ul{
 }
 
 /* REDES */
+
 .redes{
     margin-top:15px;
 }
@@ -82,16 +130,23 @@ ul{
 }
 
 /* FOOTER */
+
 footer{
     text-align:center;
     padding:15px;
     background:#dddddd;
+    margin-top:30px;
 }
 
 /* ANIMACIONES */
+
 @keyframes fadeIn{
-    from{opacity:0;}
-    to{opacity:1;}
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
 }
 
 @keyframes slideUp{
@@ -104,81 +159,170 @@ footer{
         opacity:1;
     }
 }
-</style>
 
+</style>
 </head>
 
 <body>
 
+<!-- NAVBAR SPA -->
+
+<nav>
+    <a href="#" onclick="showPage('inicio')">Inicio</a>
+    <a href="#" onclick="showPage('sobre')">Sobre mí</a>
+    <a href="#" onclick="showPage('educacion')">Educación</a>
+    <a href="#" onclick="showPage('habilidades')">Habilidades</a>
+    <a href="#" onclick="showPage('proyectos')">Proyectos</a>
+    <a href="#" onclick="showPage('experiencia')">Experiencia</a>
+</nav>
+
+<!-- INICIO -->
+
+<div id="inicio" class="page active">
+
 <header>
+
     <img src="laura.jpeg" alt="Laura Molina">
+
     <h1>Laura Katerine Molina Torres</h1>
+
     <p>Estudiante de Ingeniería en Sistemas y Programación</p>
 
-<div class="redes">
-    <a href="https://www.facebook.com/" target="_blank">
-        <i class="fab fa-facebook-f"></i>
-    </a>
+    <div class="redes">
 
-    <a href="https://www.instagram.com/" target="_blank">
-        <i class="fab fa-instagram"></i>
-    </a>
+        <a href="https://www.facebook.com/" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+        </a>
 
-    <a href="https://wa.me/573106802865" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-</div>
+        <a href="https://www.instagram.com/" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="https://wa.me/573106802865" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
     </div>
+
 </header>
 
 <section>
+    <h2>Bienvenido</h2>
+
+    <p>
+        Este es el portafolio personal de Laura Katerine Molina Torres.
+    </p>
+</section>
+
+</div>
+
+<!-- SOBRE MI -->
+
+<div id="sobre" class="page">
+
+<section>
+
     <h2>Sobre mí</h2>
 
     <p>
-Estudiante de Ingeniería en Sistemas y Programación, con gran interés en el desarrollo tecnológico y la creación de soluciones innovadoras. 
-Me caracterizo por ser una persona responsable, comprometida y con disposición constante para aprender y crecer profesionalmente.
-</p>
-    
-        
-    
+        Estudiante de Ingeniería en Sistemas y Programación, con gran interés en el desarrollo tecnológico y la creación de soluciones innovadoras.
+        Me caracterizo por ser una persona responsable, comprometida y con disposición constante para aprender y crecer profesionalmente.
+    </p>
+
 </section>
 
+</div>
+
+<!-- EDUCACION -->
+
+<div id="educacion" class="page">
+
 <section>
+
     <h2>Educación</h2>
+
     <ul>
         <li>Bachiller Académico</li>
         <li>Ingeniería en Sistemas y Programación (En curso)</li>
     </ul>
+
 </section>
 
+</div>
+
+<!-- HABILIDADES -->
+
+<div id="habilidades" class="page">
+
 <section>
+
     <h2>Habilidades</h2>
+
     <ul>
         <li>Trabajo en equipo</li>
         <li>Responsabilidad</li>
         <li>Aprendizaje rápido</li>
         <li>Adaptabilidad</li>
     </ul>
+
 </section>
 
+</div>
+
+<!-- PROYECTOS -->
+
+<div id="proyectos" class="page">
+
 <section>
+
     <h2>Proyectos</h2>
+
     <p>
         Actualmente no he participado en proyectos, pero tengo toda la disposición
         de aprender, adquirir experiencia y aportar mis conocimientos.
     </p>
+
 </section>
 
+</div>
+
+<!-- EXPERIENCIA -->
+
+<div id="experiencia" class="page">
+
 <section>
+
     <h2>Experiencia</h2>
+
     <p>
         No cuento con experiencia laboral formal por el momento, pero estoy en búsqueda
         de oportunidades para iniciar mi carrera profesional.
     </p>
+
 </section>
+
+</div>
 
 <footer>
     <p>© 2026 Laura Katerine Molina Torres</p>
 </footer>
 
+<script>
+
+/* SPA */
+
+function showPage(pageId){
+
+    let pages = document.querySelectorAll('.page');
+
+    pages.forEach(page=>{
+        page.classList.remove('active');
+    });
+
+    document.getElementById(pageId).classList.add('active');
+}
+
+</script>
+
 </body>
+</html>
